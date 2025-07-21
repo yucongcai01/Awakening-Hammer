@@ -176,9 +176,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Meta/MetaDisplayRefreshRate.unity
     guid: 07970a1a9455f4309b8e99b1c88daa98
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/start.unity
     guid: b39603e733fc04fdbad3bf359ba68c3c
+  - enabled: 1
+    path: Assets/Scenes/StartNew.unity
+    guid: fa7435d2dce894bbc90127472bde5d12
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: c52d3bb36b4c86f47af54ab9c7a02589,
       type: 2}
