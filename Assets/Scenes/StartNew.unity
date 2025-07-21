@@ -703,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f7745c48bd7477f8150d62e663c41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XROrigin: {fileID: 0}
   arHumanBodyManager: {fileID: 385317413}
   head: {fileID: 0}
   headIndex: 4
@@ -731,6 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f7745c48bd7477f8150d62e663c41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XROrigin: {fileID: 1075676026}
   arHumanBodyManager: {fileID: 385317413}
   head: {fileID: 464719175}
   headIndex: 4
