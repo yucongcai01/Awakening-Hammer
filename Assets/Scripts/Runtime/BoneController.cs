@@ -127,6 +127,58 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         Transform[] m_BoneMapping = new Transform[k_NumSkeletonJoints];
 
+        // 新增Trigger引用
+        public Transform leftHandTrigger;
+        public Transform rightHandTrigger;
+        public Transform leftUpLegTrigger;  // 腹股沟
+        public Transform rightUpLegTrigger; // 腹股沟
+        public Transform leftElbowTrigger;
+        public Transform rightElbowTrigger;
+        public Transform leftArmpitTrigger;
+        public Transform rightArmpitTrigger;
+        public Transform leftKneeTrigger;
+        public Transform rightKneeTrigger;
+
+        void Update()
+        {
+            // Trigger同步逻辑
+            if (m_SkeletonRoot == null) return;
+
+            Transform leftHand = m_SkeletonRoot.Find("LeftHand");
+            Transform rightHand = m_SkeletonRoot.Find("RightHand");
+            Transform leftUpLeg = m_SkeletonRoot.Find("LeftUpLeg");
+            Transform rightUpLeg = m_SkeletonRoot.Find("RightUpLeg");
+            Transform leftElbow = m_SkeletonRoot.Find("LeftForearm");
+            Transform rightElbow = m_SkeletonRoot.Find("RightForearm");
+            Transform leftArmpit = m_SkeletonRoot.Find("LeftShoulder1");
+            Transform rightArmpit = m_SkeletonRoot.Find("RightShoulder1");
+
+            if (leftHand != null && leftHandTrigger != null)
+                leftHandTrigger.position = leftHand.position;
+            if (rightHand != null && rightHandTrigger != null)
+                rightHandTrigger.position = rightHand.position;
+            if (leftUpLeg != null && leftUpLegTrigger != null)
+                leftUpLegTrigger.position = leftUpLeg.position;
+            if (rightUpLeg != null && rightUpLegTrigger != null)
+                rightUpLegTrigger.position = rightUpLeg.position;
+            if (leftElbow != null && leftElbowTrigger != null)
+                leftElbowTrigger.position = leftElbow.position;
+            if (rightElbow != null && rightElbowTrigger != null)
+                rightElbowTrigger.position = rightElbow.position;
+            if (leftArmpit != null && leftArmpitTrigger != null)
+                leftArmpitTrigger.position = leftArmpit.position;
+            if (rightArmpit != null && rightArmpitTrigger != null)
+                rightArmpitTrigger.position = rightArmpit.position;
+
+            Transform leftKnee = m_SkeletonRoot.Find("LeftLeg");
+            Transform rightKnee = m_SkeletonRoot.Find("RightLeg");
+
+            if (leftKnee != null && leftKneeTrigger != null)
+                leftKneeTrigger.position = leftKnee.position;
+            if (rightKnee != null && rightKneeTrigger != null)
+                rightKneeTrigger.position = rightKnee.position;
+        }
+
         public void InitializeSkeletonJoints()
         {
             // Walk through all the child joints in the skeleton and
