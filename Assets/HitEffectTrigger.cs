@@ -6,8 +6,9 @@ public class HitEffectTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // 判断是否是手部Trigger
-        if (other.CompareTag("LeftHandTrigger") || other.CompareTag("RightHandTrigger"))
+        // 只有当自己是关节，碰到的是手，才触发
+        if (gameObject.CompareTag("TargetJointTrigger") &&
+            (other.CompareTag("LeftHandTrigger") || other.CompareTag("RightHandTrigger")))
         {
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
         }
