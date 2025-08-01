@@ -11,6 +11,16 @@ public class HitEffectTrigger : MonoBehaviour
             (other.CompareTag("LeftHandTrigger") || other.CompareTag("RightHandTrigger")))
         {
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            
+            // 增加得分
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.AddScore(10);
+            }
+            else
+            {
+                Debug.LogWarning("ScoreManager 未找到！请确保场景中有 ScoreManager 组件。");
+            }
         }
     }
 }
